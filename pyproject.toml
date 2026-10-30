@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "fractal-data-atlas"
+version = "0.1.0"
+description = "Dataset-agnostic fractal exploration of numerical data"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.23", "pandas>=1.5", "PyYAML>=6", "Pillow>=9"]
+[project.optional-dependencies]
+parquet = ["pyarrow>=12"]
+dev = ["pytest>=7"]
+[project.scripts]
+fractal-atlas = "fractal_atlas.cli:main"
+[tool.setuptools.packages.find]
+where = ["src"]
