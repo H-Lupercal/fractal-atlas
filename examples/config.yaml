@@ -1,0 +1,11 @@
+name: Example numerical features
+data:
+  path: features.csv
+  kind: features
+  id_column: id
+  normalization: zscore
+  missing: median
+  similarity: cosine
+  max_cells: 4000000
+render:
+  max_iter: 100
