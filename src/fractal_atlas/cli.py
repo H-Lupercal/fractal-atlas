@@ -135,7 +135,7 @@ def build(config_path, output):
     Image.fromarray(pic,mode="L").save(out/"preview.png")
     payload={"name":cfg.get("name","Fractal Atlas"),"ids":ids,"scores":scores.tolist(),"features":features.tolist() if features is not None else None,"columns":columns,"kind":kind,"max_iter":size}
     # Embed JSON as a non-executable script tag, replacing HTML-active chars.
-    safe_json=json.dumps(payload,allow_nan=False).replace("<","\\u003c").replace(">","\\u003e").replace("&","\\u0026")
+    safe_json=json.dumps(payload,allow_nan=True).replace("<","\\u003c").replace(">","\\u003e").replace("&","\\u0026")
     # Convert missing scores to JSON null.
     safe_json=safe_json.replace("NaN","null")
     page=HTML.replace("__ATLAS_DATA__",safe_json)
