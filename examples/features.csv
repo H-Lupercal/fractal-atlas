@@ -1,0 +1,6 @@
+id,expression,chromatin,variation
+GeneA,0.4,1.7,0.02
+GeneB,0.2,1.1,0.03
+GeneC,0.9,1.5,0.09
+GeneD,0.5,0.7,0.06
+GeneE,0.8,2.2,0.05
