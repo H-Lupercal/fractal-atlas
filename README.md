@@ -6,6 +6,26 @@ A dataset-independent Python toolkit for turning numerical datasets into **explo
 
 The first implementation is deliberately generic. Use feature tables from genomics, other sciences, or any numerical dataset, or import measured pairwise relationship values. **This is an artistic visualization and exploration method, not a scientific inference model.**
 
+## Real biological data gallery
+
+**13 fractal portraits from six real source collections**, spanning plants, mice, humans, bacteria, and SARS-CoV-2 references.
+
+![Fractal Atlas biological data contact sheet](results/gallery/contact_sheet.png)
+
+- [Full gallery and dataset provenance](results/gallery/README.md)
+- [All portraits, manifest, and image comparisons](results/gallery/)
+- [Interactive comparison HTML](docs/gallery/index.html) (download to open, or enable GitHub Pages from main `/docs`)
+- [Reproducible experiment source](scripts/run_gallery.py)
+
+All images use the **same Julia formula, mapping, and rendering settings**. They illustrate how different numerical inputs change an artistic visualization; they do not measure biological similarity. Input modalities and feature counts vary, so comparisons are exploratory rather than controlled cross-species tests.
+
+To regenerate from public sources (the original datasets are **not** committed to this repository):
+
+```bash
+python -m pip install -e '.[gallery]'
+python scripts/run_gallery.py
+```
+
 ## Install
 
 Python 3.10+:
