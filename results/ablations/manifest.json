@@ -1,0 +1,128 @@
+{
+  "title": "Controlled real-data input-size fractal experiments",
+  "seed": 1741,
+  "preprocessing": "median, zscore, cosine similarity",
+  "fractal": "quadratic Julia, same c mapping and iteration count as gallery",
+  "datasets": [
+    {
+      "slug": "mouse_features_08",
+      "label": "Mouse cortex: 8 features, 180 observations",
+      "entities": 180,
+      "features": 8,
+      "julia_parameters": [
+        -0.7437790577638257,
+        0.2596849836541088
+      ],
+      "mean_similarity": 0.00718213664367795,
+      "experiment": "feature-count",
+      "source": "https://archive.ics.uci.edu/dataset/342/mice+protein+expression",
+      "selection": "first k sorted protein feature names; same 180 mouse observations",
+      "mean_gray": 16.9797,
+      "entropy_bits": 3.7517,
+      "black_pct": 55.651
+    },
+    {
+      "slug": "mouse_features_24",
+      "label": "Mouse cortex: 24 features, 180 observations",
+      "entities": 180,
+      "features": 24,
+      "julia_parameters": [
+        -0.744504807934955,
+        0.2533424782989976
+      ],
+      "mean_similarity": 0.0029129027388989925,
+      "experiment": "feature-count",
+      "source": "https://archive.ics.uci.edu/dataset/342/mice+protein+expression",
+      "selection": "first k sorted protein feature names; same 180 mouse observations",
+      "mean_gray": 17.4953,
+      "entropy_bits": 3.7696,
+      "black_pct": 55.634
+    },
+    {
+      "slug": "mouse_features_55",
+      "label": "Mouse cortex: 55 features, 180 observations",
+      "entities": 180,
+      "features": 55,
+      "julia_parameters": [
+        -0.7444185848572522,
+        0.24875525772393461
+      ],
+      "mean_similarity": 0.003420102410018444,
+      "experiment": "feature-count",
+      "source": "https://archive.ics.uci.edu/dataset/342/mice+protein+expression",
+      "selection": "first k sorted protein feature names; same 180 mouse observations",
+      "mean_gray": 18.2585,
+      "entropy_bits": 3.7947,
+      "black_pct": 55.605
+    },
+    {
+      "slug": "mouse_features_77",
+      "label": "Mouse cortex: 77 features, 180 observations",
+      "entities": 180,
+      "features": 77,
+      "julia_parameters": [
+        -0.7445830469138234,
+        0.2472251988915026
+      ],
+      "mean_similarity": 0.002452670130878687,
+      "experiment": "feature-count",
+      "source": "https://archive.ics.uci.edu/dataset/342/mice+protein+expression",
+      "selection": "first k sorted protein feature names; same 180 mouse observations",
+      "mean_gray": 18.5071,
+      "entropy_bits": 3.802,
+      "black_pct": 55.6
+    },
+    {
+      "slug": "maize_genes_064",
+      "label": "Maize: 64 genes, six expression features",
+      "entities": 64,
+      "features": 6,
+      "julia_parameters": [
+        -0.7432122593054166,
+        0.2892813012514739
+      ],
+      "mean_similarity": 0.010516509413719177,
+      "experiment": "entity-count",
+      "source": "https://github.com/corn2code/TWAStutorial/blob/main/merged_gene_tpms.csv",
+      "selection": "nested seeded subsets of the same 180-gene high-expression cohort",
+      "mean_gray": 15.6185,
+      "entropy_bits": 3.7028,
+      "black_pct": 55.785
+    },
+    {
+      "slug": "maize_genes_128",
+      "label": "Maize: 128 genes, six expression features",
+      "entities": 128,
+      "features": 6,
+      "julia_parameters": [
+        -0.7435399439824695,
+        0.28795075283070304
+      ],
+      "mean_similarity": 0.008588775992393494,
+      "experiment": "entity-count",
+      "source": "https://github.com/corn2code/TWAStutorial/blob/main/merged_gene_tpms.csv",
+      "selection": "nested seeded subsets of the same 180-gene high-expression cohort",
+      "mean_gray": 15.5677,
+      "entropy_bits": 3.6997,
+      "black_pct": 55.782
+    },
+    {
+      "slug": "maize_genes_180",
+      "label": "Maize: 180 genes, six expression features",
+      "entities": 180,
+      "features": 6,
+      "julia_parameters": [
+        -0.7432073737844227,
+        0.2861040797973613
+      ],
+      "mean_similarity": 0.010545250959694386,
+      "experiment": "entity-count",
+      "source": "https://github.com/corn2code/TWAStutorial/blob/main/merged_gene_tpms.csv",
+      "selection": "nested seeded subsets of the same 180-gene high-expression cohort",
+      "mean_gray": 15.7278,
+      "entropy_bits": 3.707,
+      "black_pct": 55.77
+    }
+  ],
+  "warning": "Changes in the images do not prove additional visual complexity or biological insight."
+}
