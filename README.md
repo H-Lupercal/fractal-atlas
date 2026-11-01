@@ -26,6 +26,15 @@ python -m pip install -e '.[gallery]'
 python scripts/run_gallery.py
 ```
 
+## Controlled feature- and entity-count experiments
+
+Seven additional portraits vary the input size while preserving the dataset and fractal rule: mouse cortex protein measurements at 8, 24, 55, and 77 features (180 observations), and maize expression at 64, 128, and 180 genes (six features).
+
+- [Portraits and reproduction details](results/ablations/README.md)
+- [Input-size experiment contact sheet](results/ablations/contact_sheet.png)
+
+These variations show sensitivity of the artistic encoding to the chosen inputs, not proof of biological complexity.
+
 ## Install
 
 Python 3.10+:
