@@ -153,7 +153,7 @@ def web_gallery(records):
     import html
     rec=[{"label":x["label"],"slug":x["slug"],"c":x["julia_c"]} for x in records]
     cards="".join(
-        '<article><a href="../../results/gallery/'+x["slug"]+'.png"><img src="../../results/gallery/'+
+        '<article><a href="images/'+x["slug"]+'.png"><img src="images/'+
         x["slug"]+'.png" alt="Fractal portrait" loading="lazy"></a><h3>'+
         html.escape(x["label"])+'</h3><small>'+str(x["rows"])+' entities · '+str(x["features"])+
         ' features</small><p><a href="'+x["source"]+'">Data source</a></p></article>'
@@ -177,7 +177,7 @@ canvas{width:100%;max-width:420px;background:#000}select,input{font:inherit;marg
 <div class="compare"><canvas id="ca" width="280" height="280"></canvas><canvas id="cb" width="280" height="280"></canvas></div>
 <p>Zooming here reveals more Julia-set mathematics, not new measurements. Download or run the source to navigate the underlying data hierarchy.</p>
 <h2>All portraits</h2><div class="grid">__CARDS__</div>
-<p>See <a href="../../results/gallery/README.md">methods, sources, and comparisons</a>.</p></main>
+<p>See <a href="https://github.com/H-Lupercal/fractal-atlas/tree/main/results/gallery">methods, sources, and comparisons</a>.</p></main>
 <script id="data" type="application/json">__DATA__</script><script>
 let datasets=JSON.parse(document.getElementById("data").textContent),
 a=document.getElementById("a"),b=document.getElementById("b"),zoom=document.getElementById("zoom");
@@ -248,7 +248,12 @@ def main():
         "max_iterations":ITER,"datasets":entries,
         "warning":"Visual differences are not evidence of biological similarity or causal interactions",
     },indent=2))
-    contact_sheet(entries);web_gallery(entries)
+    contact_sheet(entries)
+    site_images=WEB/"images"
+    site_images.mkdir(parents=True,exist_ok=True)
+    for entry in entries:
+        shutil.copyfile(DEST/(entry["slug"]+".png"),site_images/(entry["slug"]+".png"))
+    web_gallery(entries)
     lines=["# Real-data fractal gallery","","Only computed images and metadata are stored here, not redistributed raw source datasets.","",
         "## Reproduce","","    python -m pip install -e '.[gallery]'",
         "    python scripts/run_gallery.py","",
