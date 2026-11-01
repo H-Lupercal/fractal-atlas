@@ -1,0 +1,52 @@
+name: Publish real-data fractal gallery
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/run_gallery.py"
+      - ".github/workflows/gallery.yml"
+      - "pyproject.toml"
+      - "src/fractal_atlas/**"
+permissions:
+  contents: write
+jobs:
+  gallery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install gallery dependencies
+        run: python -m pip install -e '.[gallery]'
+      - name: Build gallery with real public datasets
+        run: python scripts/run_gallery.py
+      - name: Verify derived outputs
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("results/gallery")
+          m=json.loads((p/"manifest.json").read_text())
+          assert len(m["datasets"])>=10
+          assert (p/"contact_sheet.png").exists()
+          assert (p/"pairwise_visual_differences.csv").exists()
+          assert Path("docs/gallery/index.html").exists()
+          for d in m["datasets"]:
+              assert (p/(d["slug"]+".png")).exists()
+          print("Verified",len(m["datasets"]),"real-data visualizations")
+          PY
+      - name: Commit images, gallery and measurements
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/gallery docs/gallery/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "data: publish real-data fractal gallery [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "No changes to publish"
+          fi
