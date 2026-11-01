@@ -1,0 +1,244 @@
+{
+  "experiment": "Real biological data gallery v1",
+  "code": "scripts/run_gallery.py",
+  "preprocessing": "median imputation; z-score; cosine similarity",
+  "julia": "z[n+1] = z[n]^2 + c; c=(-0.745+0.17*tanh(mean)) + i*(0.186+0.17*tanh(std))",
+  "max_iterations": 110,
+  "datasets": [
+    {
+      "slug": "iris_setosa",
+      "label": "Iris \u2014 setosa",
+      "group": "Plants",
+      "source": "https://archive.ics.uci.edu/dataset/53/iris",
+      "description": "Flower morphology, one iris species",
+      "rows": 50,
+      "features": 4,
+      "julia_c": [
+        -0.7431964300128572,
+        0.2722975839749773
+      ],
+      "mean_similarity": 0.010609633289277554,
+      "std_similarity": 0.5595356822013855,
+      "mean_gray": 16.27,
+      "entropy_bits": 3.7263,
+      "black_pct": 55.703
+    },
+    {
+      "slug": "iris_versicolor",
+      "label": "Iris \u2014 versicolor",
+      "group": "Plants",
+      "source": "https://archive.ics.uci.edu/dataset/53/iris",
+      "description": "Flower morphology, one iris species",
+      "rows": 50,
+      "features": 4,
+      "julia_c": [
+        -0.7443364481426215,
+        0.2819737299428844
+      ],
+      "mean_similarity": 0.003903266042470932,
+      "std_similarity": 0.6394887566566467,
+      "mean_gray": 15.6268,
+      "entropy_bits": 3.7008,
+      "black_pct": 55.764
+    },
+    {
+      "slug": "iris_virginica",
+      "label": "Iris \u2014 virginica",
+      "group": "Plants",
+      "source": "https://archive.ics.uci.edu/dataset/53/iris",
+      "description": "Flower morphology, one iris species",
+      "rows": 50,
+      "features": 4,
+      "julia_c": [
+        -0.7442665967210735,
+        0.27739990408171583
+      ],
+      "mean_similarity": 0.004314163699746132,
+      "std_similarity": 0.6008392572402954,
+      "mean_gray": 15.7838,
+      "entropy_bits": 3.7065,
+      "black_pct": 55.736
+    },
+    {
+      "slug": "human_malignant",
+      "label": "Human breast nuclei \u2014 malignant",
+      "group": "Human",
+      "source": "https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic",
+      "description": "30 measured nucleus features; diagnostic class",
+      "rows": 180,
+      "features": 30,
+      "julia_c": [
+        -0.7436765705772997,
+        0.25366632071874196
+      ],
+      "mean_similarity": 0.007785036228597164,
+      "std_similarity": 0.42131441831588745,
+      "mean_gray": 17.7346,
+      "entropy_bits": 3.7783,
+      "black_pct": 55.625
+    },
+    {
+      "slug": "human_benign",
+      "label": "Human breast nuclei \u2014 benign",
+      "group": "Human",
+      "source": "https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic",
+      "description": "30 measured nucleus features; diagnostic class",
+      "rows": 180,
+      "features": 30,
+      "julia_c": [
+        -0.7428398455835411,
+        0.2508373811836733
+      ],
+      "mean_similarity": 0.012707474641501904,
+      "std_similarity": 0.4016926884651184,
+      "mean_gray": 18.464,
+      "entropy_bits": 3.8018,
+      "black_pct": 55.602
+    },
+    {
+      "slug": "maize_lower",
+      "label": "Maize RNA expression \u2014 lower",
+      "group": "Plants",
+      "source": "https://github.com/corn2code/TWAStutorial/blob/main/merged_gene_tpms.csv",
+      "description": "Transcript TPM across six samples; lower/higher expression cohorts",
+      "rows": 180,
+      "features": 6,
+      "julia_c": [
+        -0.7448317174755688,
+        0.2578302156264368
+      ],
+      "mean_similarity": 0.00098989752586931,
+      "std_similarity": 0.45076870918273926,
+      "mean_gray": 16.9323,
+      "entropy_bits": 3.7484,
+      "black_pct": 55.66
+    },
+    {
+      "slug": "maize_higher",
+      "label": "Maize RNA expression \u2014 higher",
+      "group": "Plants",
+      "source": "https://github.com/corn2code/TWAStutorial/blob/main/merged_gene_tpms.csv",
+      "description": "Transcript TPM across six samples; lower/higher expression cohorts",
+      "rows": 180,
+      "features": 6,
+      "julia_c": [
+        -0.7432073737844227,
+        0.2861040797973613
+      ],
+      "mean_similarity": 0.010545250959694386,
+      "std_similarity": 0.6759000420570374,
+      "mean_gray": 15.7278,
+      "entropy_bits": 3.707,
+      "black_pct": 55.77
+    },
+    {
+      "slug": "mouse_control",
+      "label": "Mouse cortex proteins \u2014 control",
+      "group": "Animals",
+      "source": "https://archive.ics.uci.edu/dataset/342/mice+protein+expression",
+      "description": "77 protein measurements in cortex; mouse genotype group",
+      "rows": 180,
+      "features": 77,
+      "julia_c": [
+        -0.7445830469138234,
+        0.2472251988915026
+      ],
+      "mean_similarity": 0.002452670130878687,
+      "std_similarity": 0.37705621123313904,
+      "mean_gray": 18.5071,
+      "entropy_bits": 3.802,
+      "black_pct": 55.6
+    },
+    {
+      "slug": "mouse_trisomy",
+      "label": "Mouse cortex proteins \u2014 trisomy",
+      "group": "Animals",
+      "source": "https://archive.ics.uci.edu/dataset/342/mice+protein+expression",
+      "description": "77 protein measurements in cortex; mouse genotype group",
+      "rows": 180,
+      "features": 77,
+      "julia_c": [
+        -0.7441874995063046,
+        0.24831923452435
+      ],
+      "mean_similarity": 0.004779451061040163,
+      "std_similarity": 0.38447073101997375,
+      "mean_gray": 18.4652,
+      "entropy_bits": 3.8015,
+      "black_pct": 55.6
+    },
+    {
+      "slug": "ecoli_all",
+      "label": "E. coli iModulon activity \u2014 all",
+      "group": "Bacteria",
+      "source": "https://github.com/SBRG/precise-db",
+      "description": "iModulon activities across experimental conditions, not bacterial cells",
+      "rows": 92,
+      "features": 278,
+      "julia_c": [
+        -0.7443135062854483,
+        0.22992205386354142
+      ],
+      "mean_similarity": 0.0040382202714681625,
+      "std_similarity": 0.26435568928718567,
+      "mean_gray": 19.8507,
+      "entropy_bits": 3.8374,
+      "black_pct": 55.529
+    },
+    {
+      "slug": "ecoli_iron",
+      "label": "E. coli iModulon activity \u2014 iron",
+      "group": "Bacteria",
+      "source": "https://github.com/SBRG/precise-db",
+      "description": "iModulon activities across experimental conditions, not bacterial cells",
+      "rows": 92,
+      "features": 8,
+      "julia_c": [
+        -0.74196858723031,
+        0.27942480350839544
+      ],
+      "mean_similarity": 0.017833730205893517,
+      "std_similarity": 0.6177473664283752,
+      "mean_gray": 16.3493,
+      "entropy_bits": 3.7314,
+      "black_pct": 55.72
+    },
+    {
+      "slug": "sars_ref_1",
+      "label": "SARS-CoV-2 reference \u2014 Wuhan/Hu-1/2019",
+      "group": "Viruses",
+      "source": "https://github.com/nextstrain/ncov/blob/master/data/references_sequences.fasta",
+      "description": "160-nt windows with 16 dinucleotide frequencies; viruses have no cell types",
+      "rows": 185,
+      "features": 16,
+      "julia_c": [
+        -0.7447079237153119,
+        0.2371552297664324
+      ],
+      "mean_similarity": 0.0017180974828079343,
+      "std_similarity": 0.3105233311653137,
+      "mean_gray": 19.5378,
+      "entropy_bits": 3.8319,
+      "black_pct": 55.565
+    },
+    {
+      "slug": "sars_ref_2",
+      "label": "SARS-CoV-2 reference \u2014 21L",
+      "group": "Viruses",
+      "source": "https://github.com/nextstrain/ncov/blob/master/data/references_sequences.fasta",
+      "description": "160-nt windows with 16 dinucleotide frequencies; viruses have no cell types",
+      "rows": 186,
+      "features": 16,
+      "julia_c": [
+        -0.7447188973369459,
+        0.23711730148824178
+      ],
+      "mean_similarity": 0.0016535465838387609,
+      "std_similarity": 0.3102780282497406,
+      "mean_gray": 19.5258,
+      "entropy_bits": 3.8317,
+      "black_pct": 55.564
+    }
+  ],
+  "warning": "Visual differences are not evidence of biological similarity or causal interactions"
+}
