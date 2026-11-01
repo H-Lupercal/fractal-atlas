@@ -35,6 +35,7 @@ jobs:
           assert (p/"contact_sheet.png").exists()
           assert (p/"pairwise_visual_differences.csv").exists()
           assert Path("docs/gallery/index.html").exists()
+          assert len(list(Path("docs/gallery/images").glob("*.png"))) == len(m["datasets"])
           for d in m["datasets"]:
               assert (p/(d["slug"]+".png")).exists()
           print("Verified",len(m["datasets"]),"real-data visualizations")
@@ -43,7 +44,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add results/gallery docs/gallery/index.html
+          git add results/gallery docs/gallery
           if ! git diff --cached --quiet; then
             git commit -m "data: publish real-data fractal gallery [skip ci]"
             git push origin HEAD:main
